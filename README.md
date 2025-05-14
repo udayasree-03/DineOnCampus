@@ -51,16 +51,17 @@ A web-based **Canteen Management System** built using **HTML, CSS, JavaScript, P
   -Import the provided .sql file
 
 4. Configure database credentials in your PHP files (if needed):
+   
    $conn = mysqli_connect("localhost", "root", "", "dine_on_campus");
-5. http://localhost/DineOnCampus/
+6. http://localhost/DineOnCampus/
 
 
 
 
 📊 Database Structure 
-beverages, tiffins, meals, fast_food, ice_creams: Category-wise item tables
-cart: Stores current user's selected items
-order_items: Stores order details
-orders: Finalized orders (for analytics)
-users: User login information (optional)
+- beverages, tiffins, meals, fast_food, ice_creams: Category-wise item tables
+- cart: Stores current user's selected items
+- order_items: Stores order details
+- orders: Finalized orders (for analytics)
+- users: User login information 
 
