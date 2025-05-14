@@ -1,0 +1,195 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="beverages.css">
+    <title>BEVERAGES</title>
+    <style>
+        .cart-link i {
+            font-size: 35px; /* Adjust the size as needed */
+        }
+        nav ul {
+            display: flex;
+            list-style: none;
+            padding: 0;
+        }
+        nav ul li {
+            margin-right: 20px;
+        }
+        nav ul li a {
+            text-decoration: none;
+            color: rgb(238, 228, 228); /* Change to your preferred color */
+        }
+        header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 10px;
+        }
+        .back-arrow, .home-link {
+            text-decoration: none;
+            color: rgb(247, 237, 237); /* Change to your preferred color */
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <a href="javascript:history.back()" class="back-arrow">
+            <i>&#8592;</i> Back
+        </a>
+        <h1><i>BEVERAGES</i></h1>
+        <a href="cart.html" class="cart-link">
+            <i>&#128722;</i>
+        </a>
+        <div class="container header-container">
+            <nav>
+                <ul>
+                    <li><a href="home page.html">Home</a></li>
+                    <li><a href="contact.html">Contact</a></li>
+                    <li><a href="about.html">About Us</a></li>
+                    <li><a href="logout.html">Logout</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+    <main>
+        <h3>Select the items you want to order from the below list</h3>
+        <section class="food-container">
+            <div class="food-box" id="item-10">
+                <img src="sprite.jpg" alt="Sprite">
+                <h2>Sprite</h2>
+                <p>ID: 10<br>
+                    <b>RS 15/-</b></p>
+                <label for="sprite-quantity">Quantity:</label>
+                <select id="sprite-quantity" name="sprite">
+                    <option value="0">0</option>
+                    <option value="1">1</option>
+                    <option value="2">2</option>
+                    <option value="3">3</option>
+                    <option value="4">4</option>
+                    <option value="5">5</option>
+                    <option value="6">6</option>
+                </select><br><br>
+                <button style="background-color: rgb(88, 202, 88);" onclick="addToCart(10, 'Sprite', 15)">Add to Cart</button>
+            </div>
+            <div class="food-box" id="item-11">
+                <img src="thums-up.jpg" alt="Thumbs-Up">
+                <h2>Thumbs-Up</h2>
+                <p>ID: 11<br>
+                    <b>RS 15/-</b></p>
+                <label for="thumbs-up-quantity">Quantity:</label>
+                <select id="thumbs-up-quantity" name="thumbs-up">
+                    <option value="0">0</option>
+                    <option value="1">1</option>
+                    <option value="2">2</option>
+                    <option value="3">3</option>
+                    <option value="4">4</option>
+                    <option value="5">5</option>
+                    <option value="6">6</option>
+                </select><br><br>
+                <button style="background-color: rgb(88, 202, 88);" onclick="addToCart(11, 'Thumbs-Up', 15)">Add to Cart</button>
+            </div>
+            <div class="food-box" id="item-12">
+                <img src="frooti.jpg" alt="Frooti">
+                <h2>Frooti</h2>
+                <p>ID: 12<br>
+                    <b>RS 10/-</b></p>
+                <label for="frooti-quantity">Quantity:</label>
+                <select id="frooti-quantity" name="frooti">
+                    <option value="0">0</option>
+                    <option value="1">1</option>
+                    <option value="2">2</option>
+                    <option value="3">3</option>
+                    <option value="4">4</option>
+                    <option value="5">5</option>
+                    <option value="6">6</option>
+                </select><br><br>
+                <button style="background-color: rgb(88, 202, 88);" onclick="addToCart(12, 'Frooti', 10)">Add to Cart</button>
+            </div>
+            <div class="food-box" id="item-13">
+                <img src="maaza.jpg" alt="Maaza">
+                <h2>Maaza</h2>
+                <p>ID: 13<br>
+                    <b>RS 10/-</b></p>
+                <label for="maaza-quantity">Quantity:</label>
+                <select id="maaza-quantity" name="maaza">
+                    <option value="0">0</option>
+                    <option value="1">1</option>
+                    <option value="2">2</option>
+                    <option value="3">3</option>
+                    <option value="4">4</option>
+                    <option value="5">5</option>
+                    <option value="6">6</option>
+                </select><br><br>
+                <button style="background-color: rgb(88, 202, 88);" onclick="addToCart(13, 'Maaza', 10)">Add to Cart</button>
+            </div>
+            <div class="food-box" id="item-14">
+                <img src="smoodh.jpg" alt="Smoodh">
+                <h2>Smoodh</h2>
+                <p>ID: 14<br>
+                    <b>RS 10/-</b></p>
+                <label for="smoodh-quantity">Quantity:</label>
+                <select id="smoodh-quantity" name="smoodh">
+                    <option value="0">0</option>
+                    <option value="1">1</option>
+                    <option value="2">2</option>
+                    <option value="3">3</option>
+                    <option value="4">4</option>
+                    <option value="5">5</option>
+                    <option value="6">6</option>
+                </select><br><br>
+                <button style="background-color: rgb(88, 202, 88);" onclick="addToCart(14, 'Smoodh', 10)">Add to Cart</button>
+            </div>
+            <div class="food-box" id="item-15">
+                <img src="pulpy-orange.jpg" alt="pulpy-orange.jpg">
+                <h2>Pulpy Orange</h2>
+                <p>ID: 15<br>
+                    <b>RS 40/-</b></p>
+                <label for="pulpy-orange-quantity">Quantity:</label>
+                <select id="pulpy-orange-quantity" name="pulpy-orange">
+                    <option value="0">0</option>
+                    <option value="1">1</option>
+                    <option value="2">2</option>
+                    <option value="3">3</option>
+                    <option value="4">4</option>
+                    <option value="5">5</option>
+                    <option value="6">6</option>
+                </select><br><br>
+                <button style="background-color: rgb(88, 202, 88);" onclick="addToCart(15, 'pulpy-orange', 40)">Add to Cart</button>
+            </div>
+        </section>
+    </main>
+    <form id="cartForm" action="beverages.php" method="post" style="display: none;">
+        <!-- Hidden input fields to store cart data -->
+        <input type="hidden" id="cartData" name="cartData">
+    </form>
+    <script>
+        function addToCart(itemId, itemName, itemPrice) {
+            const quantity = document.querySelector(`#${itemName.toLowerCase().replace(/\s+/g, '-')}-quantity`).value;
+            if (quantity === "0") {
+                alert("Please select a quantity greater than 0.");
+                return;
+            }
+
+            const cart = JSON.parse(localStorage.getItem('cart')) || [];
+            const itemIndex = cart.findIndex(item => item.id === itemId);
+
+            if (itemIndex === -1) {
+                cart.push({ id: itemId, name: itemName, price: itemPrice, quantity: parseInt(quantity) });
+            } else {
+                cart[itemIndex].quantity += parseInt(quantity);
+            }
+
+            localStorage.setItem('cart', JSON.stringify(cart));
+            alert(`${quantity} ${itemName}(s) added to cart.`);
+        }
+
+        function submitForm() {
+            const cart = JSON.parse(localStorage.getItem('cart')) || [];
+            document.getElementById('cartData').value = JSON.stringify(cart);
+            document.getElementById('cartForm').submit();
+        }
+    </script>
+</body>
+</html>

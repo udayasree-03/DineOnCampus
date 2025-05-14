@@ -1,0 +1,155 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="meals.css">
+    <title>MEALS</title>
+    <style>
+        .cart-link i {
+            font-size: 35px;
+        }
+        nav ul {
+            display: flex;
+            list-style: none;
+            padding: 0;
+        }
+        nav ul li {
+            margin-right: 20px;
+        }
+        nav ul li a {
+            text-decoration: none;
+            color: rgb(238, 228, 228);
+        }
+        .add-to-cart-button {
+            background-color: #4CAF50;
+            border: none;
+            color: white;
+            padding: 10px 20px;
+            text-align: center;
+            text-decoration: none;
+            display: inline-block;
+            font-size: 16px;
+            margin-top: 10px;
+            cursor: pointer;
+        }
+        .add-to-cart-button:hover {
+            background-color: #45a049;
+        }
+        .dropdown-content {
+            display: none;
+            position: fixed;
+            background-color: #f9f9f9;
+            box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+            z-index: 1;
+            padding: 10px;
+            border-radius: 5px;
+            max-width: 250px;
+            right: 20px;
+            top: 20px;
+        }
+        .dropdown-content p {
+            margin: 5px 0;
+        }
+        .show {
+            display: block;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <a href="javascript:history.back()" class="back-arrow">
+            <i>&#8592;</i> Back
+        </a>
+        
+        <h1><i>MEALS</i></h1>
+        <a href="cart.html" class="cart-link">
+            <i>&#128722;</i>
+            <span id="cart-count" class="cart-count">0</span>
+        </a>
+        <div class="container header-container">
+            <nav>
+                <ul>
+                    <li><a href="home.html">Home</a></li>
+                    <li><a href="contact.html">Contact</a></li>
+                    <li><a href="about.html">About Us</a></li>
+                    <li><a href="logout.html">Logout</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+    <main>
+        <h3>Select the items you want to order from the below list</h3>
+        <section class="food-container">
+            <div class="food-box">
+                <img src="meal.jpg" alt="Veg Mini meals">
+                <h2>Veg Mini meals</h2>
+                <p>ID:21<br>
+                    <b>₹ 60/-</b></p>
+                <label for="Veg-Mini-meals-quantity">Quantity:</label>
+                <select id="Veg-Mini-meals-quantity">
+                    <option value="0">0</option>
+                    <option value="1">1</option>
+                    <option value="2">2</option>
+                    <option value="3">3</option>
+                    <option value="4">4</option>
+                    <option value="5">5</option>
+                    <option value="6">6</option>
+                </select><br><br>
+                <button class="add-to-cart-button" onclick="addToCart(21, 'Veg Mini meals', 60)">Add to Cart</button>
+            </div>
+            <div class="food-box">
+                <img src="meal.jpg" alt="Veg Full meals">
+                <h2>Veg Full meals</h2>
+                <p>ID:22<br>
+                    <b>₹ 80/-</b></p>
+                <label for="Veg-Full-meals-quantity">Quantity:</label>
+                <select id="Veg-Full-meals-quantity">
+                    <option value="0">0</option>
+                    <option value="1">1</option>
+                    <option value="2">2</option>
+                    <option value="3">3</option>
+                    <option value="4">4</option>
+                    <option value="5">5</option>
+                    <option value="6">6</option>
+                </select><br><br>
+                <button class="add-to-cart-button" onclick="addToCart(22, 'Veg Full meals', 80)">Add to Cart</button>
+            </div>
+        </section>
+        <div id="dropdown" class="dropdown-content"></div>
+    </main>
+    <script>
+        function addToCart(itemId, itemName, itemPrice) {
+            // Function to add item to cart
+            const quantity = document.getElementById(`${itemName.replace(/\s+/g, '-')}-quantity`).value;
+            if (quantity === "0") {
+                alert("Please select a quantity greater than 0.");
+                return;
+            }
+
+            const cart = JSON.parse(localStorage.getItem('cart')) || [];
+            const itemIndex = cart.findIndex(item => item.id === itemId);
+
+            if (itemIndex === -1) {
+                cart.push({ id: itemId, name: itemName, price: itemPrice, quantity: parseInt(quantity) });
+            } else {
+                cart[itemIndex].quantity += parseInt(quantity);
+            }
+
+            localStorage.setItem('cart', JSON.stringify(cart));
+            alert(`${quantity} ${itemName}(s) added to cart.`);
+            updateCartCount(); // Update cart count
+        }
+
+        function updateCartCount() {
+            // Function to update cart count displayed in the header
+            const cart = JSON.parse(localStorage.getItem('cart')) || [];
+            const cartCount = cart.reduce((total, item) => total + item.quantity, 0);
+            document.getElementById('cart-count').innerText = cartCount;
+        }
+
+        // Initialize cart count on page load
+        document.addEventListener('DOMContentLoaded', updateCartCount);
+    </script>
+</body>
+</html>

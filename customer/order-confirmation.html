@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Order Confirmation</title>
+    <style>
+        /* General styles */
+        body {
+            font-family: 'Arial', sans-serif;
+            background-color: #171616;
+            background: url('background.jpg') no-repeat center center fixed;
+            background-size: cover;
+            margin: 0;
+            padding: 0;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            color: #e4d8d8;
+        }
+
+        /* Confirmation box styles */
+        .confirmation-box {
+            max-width: 600px;
+            background-color: #fff;
+            padding: 40px;
+            border-radius: 8px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            text-align: center;
+            color: #333;
+        }
+
+        .confirmation-box h1 {
+            margin-bottom: 20px;
+            color: #28a745;
+        }
+
+        .confirmation-box p {
+            font-size: 18px;
+            line-height: 1.6;
+        }
+
+        .order-id {
+            font-size: 24px;
+            font-weight: bold;
+            margin-bottom: 20px;
+        }
+
+        .continue-shopping-btn {
+            padding: 10px 20px;
+            font-size: 16px;
+            background-color: #28a745;
+            color: #fff;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+            text-decoration: none;
+            margin-top: 20px;
+            display: inline-block;
+            transition: background-color 0.3s, transform 0.3s;
+        }
+
+        .continue-shopping-btn:hover {
+            background-color: #bd1754;
+            transform: scale(1.05);
+        }
+    </style>
+</head>
+<body>
+    <div class="confirmation-box">
+        <h1>Order Placed Successfully!</h1>
+        <p>Your order has been accepted.</p>
+        <p>Please collect your order from the canteen.</p>
+        <p class="order-id">Order ID: <strong id="order-id"></strong></p>
+        <a href="home page.html" class="continue-shopping-btn">Continue Shopping</a>
+    </div>
+
+    <script>
+        // Retrieve and display the order ID from localStorage
+        const orderId = localStorage.getItem('orderId');
+        document.getElementById('order-id').innerText = orderId;
+
+        // Clear orderId from localStorage after displaying
+        localStorage.removeItem('orderId');
+    </script>
+</body>
+</html>

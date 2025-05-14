@@ -1,0 +1,54 @@
+<?php
+// signup.php
+?>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sign Up Page</title>
+    <link rel="stylesheet" href="signup.css">
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet">
+</head>
+<header>
+    <a href="home.php" class="home-link">
+        <i>&#8962;</i> Home
+    </a>
+</header>
+<body>
+    <div class="signup-container">
+        <div class="signup-form">
+            <div class="logo">
+                <img src="logo dineoncampus.jpg" alt="Company Logo">
+            </div>
+            <h2>Create Your Account</h2>
+            <p>Join us and start your journey</p>
+            <form action="process_signup.php" method="POST">
+                <div class="input-group">
+                    <label for="username">Username</label>
+                    <input type="text" id="username" name="username" required>
+                </div>
+                <div class="input-group">
+                    <label for="email">Email</label>
+                    <input type="email" id="email" name="email" required>
+                </div>
+                <div class="input-group">
+                    <label for="phone">Phone Number</label>
+                    <input type="tel" id="phone" name="phone" required>
+                </div>
+                <div class="input-group">
+                    <label for="password">Password</label>
+                    <input type="password" id="password" name="password" required>
+                </div>
+                <div class="input-group">
+                    <label for="confirm-password">Confirm Password</label>
+                    <input type="password" id="confirm-password" name="confirm-password" required>
+                </div>
+                <button type="submit">Sign Up</button>
+                <br>
+                <a href="login.php">Already have an account? Login here</a>
+            </form>
+        </div>
+    </div>
+</body>
+</html>

@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login Page</title>
+    <link rel="stylesheet" href="login.css">
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet">
+</head>
+<header>
+    <a href="home.php" class="home-link">
+        <i>&#8962;</i> Home
+    </a>
+</header>
+<body>
+    <div class="login-container">
+        <div class="login-form">
+            <div class="logo">
+                <img src="logo.jpg" alt="Company Logo">
+            </div>
+            <h2>Welcome!!!</h2>
+            <p>Please login to your account</p>
+            <form action="login.php" method="POST">
+                <div class="input-group">
+                    <label for="username">Username</label>
+                    <input type="text" id="username" name="username" required>
+                </div>
+                <div class="input-group">
+                    <label for="password">Password</label>
+                    <input type="password" id="password" name="password" required>
+                </div>
+                <button type="submit">Login</button><br><br><br>
+
+                <a href="forgot_password.php">Forgot password?</a>
+                <br>
+                <a href="signup.php">Don't have an account? Sign up here</a>
+            </form>
+        </div>
+    </div>
+</body>
+</html>

@@ -1,0 +1,73 @@
+body {
+    font-family: 'Roboto', sans-serif;
+    background: url('bag.avif') no-repeat center center fixed;
+    background-size: cover;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+}
+
+.dashboard-container, .analytics-container {
+    max-width: 900px;
+    margin: 20px;
+    background-color: rgba(255, 255, 255, 0.9);
+    padding: 30px;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+h1 {
+    text-align: center;
+    color: #333;
+    margin-bottom: 20px;
+    font-size: 2em;
+}
+
+.dashboard-menu ul {
+    list-style-type: none;
+    padding: 0;
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+}
+
+.dashboard-menu ul li {
+    background: #007bff;
+    border-radius: 5px;
+    text-align: center;
+}
+
+.dashboard-menu ul li a {
+    text-decoration: none;
+    color: #ffffff;
+    display: block;
+    padding: 15px;
+    font-size: 1.2em;
+}
+
+.dashboard-menu ul li a:hover {
+    background-color: #0056b3;
+}
+
+.logout, .back {
+    text-align: center;
+    margin-top: 20px;
+}
+
+.logout a, .back a {
+    text-decoration: none;
+    color: #007bff;
+    font-size: 1.2em;
+}
+
+.analytics {
+    text-align: center;
+    font-size: 1.2em;
+}
+
+.analytics p {
+    margin: 10px 0;
+}
